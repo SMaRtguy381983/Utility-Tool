@@ -1,0 +1,17 @@
+{
+  "name": "utilitytool",
+  "version": "1.0.0",
+  "description": "Assignment 6: Utility Tool",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Assignment",
+    "6",
+    "Utility",
+    "Tool"
+  ],
+  "author": "Shaun M. Rogers <SMRogers@fullsail.edu>",
+  "license": "ISC"
+}
