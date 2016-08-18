@@ -1,0 +1,11 @@
+// Here I list files I want to be ignore from being committed
+node_modules
+.DS_Store
+*.log
+*.logs
+.env
+.env.json
+out
+build
+logs
+*.sh
