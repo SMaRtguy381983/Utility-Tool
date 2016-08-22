@@ -1,3 +1,4 @@
+<body style='background:orange'>
 <h1 style='color:purple; font-weight:bolder'>loot-ytilitu - a Utility Tool: The README</h1>
 <ul style='font-size:1.3em'>What's is loot-ytilitu?
   <li style='font-size:.8em'>loot-ytilitu is in short a Utility Tool that displays all the requested information in console as well as store it in log.
