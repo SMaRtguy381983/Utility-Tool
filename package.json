@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Assignment 6: Utility Tool",
   "main": "src/index.js",
+  "engines": {
+    "node": "v6.4.0",
+    "npm": "3.10.6"
+  },
   "scripts": {
     "start": "node src/index.js",
     "test": "mocha --reporter spec test"
@@ -23,6 +27,7 @@
     "eslint-plugin-import": "^1.13.0",
     "eslint-plugin-jsx-a11y": "^2.1.0",
     "eslint-plugin-react": "^6.0.0",
+    "mocha": "^3.0.2",
     "sinon": "^1.17.5"
   },
   "author": "Shaun M. Rogers <SMRogers@fullsail.edu>",
