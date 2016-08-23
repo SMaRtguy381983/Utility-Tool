@@ -153,6 +153,7 @@ exports.bumpit = (currentV, tag) => {
   } else if (tag === 'patch') {
     const bumpPatch = semver.inc(currentV, tag);
     return bumpPatch;
+  } else {
+    return new Error();
   }
-  return new Error();
 };
