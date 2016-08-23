@@ -43,26 +43,26 @@ exports.debug = (msg, obj, level) => {
 <hr style=background:yellow>`;
 
     // Print text out to the debug file
-    fs.appendFile('logs/debug.log', text, (err) => {
-      // Display error in console if it is not null
-      if (err) {
-        console.log(err);
-      }
-    });
+    // fs.appendFile('logs/debug.log', text, (err) => {
+    //   // Display error in console if it is not null
+    //   if (err) {
+    //     console.log(err);
+    //   }
+    // });
   }
 };
 
 // Increment the Version passed, based off of pVersion and pType.
 exports.incVersion = (pVersion, pType) => {
-  const errMsg = 'e.x. major, minor, patch, premajor, preminor, prepatch, prerelease';
+  const errMsg = "e.x. 'major', 'minor', 'patch', 'premajor', 'preminor', 'prepatch', 'prerelease'";
 
   // Ensure that pVersion and pType are of type String.
   if (pVersion !== String(pVersion)) {
-    exports.debug('pVersion is not valid', '1.0.0-alpha > 1.0.0-alpha.1 > 1.0.0-alpha.beta > ' +
-      '1.0.0-beta > 1.0.0 > 1.0.1 > 1.1.0 > 2.0.0', 'error');
+    exports.debug('pVersion is not valid', "e.x. '1.0.0-alpha' > '1.0.0-alpha.1' > " +
+    "'1.0.0-alpha.beta' > '1.0.0-beta' > '1.0.0' > '1.0.1' > '1.1.0' > '2.0.0'", 'error');
 
     return false;
-  } else if (pVersion !== String(pVersion)) {
+  } else if (pType !== String(pType)) {
     exports.debug('pType is not valid', errMsg, 'error');
 
     return false;
@@ -80,10 +80,10 @@ exports.incVersion = (pVersion, pType) => {
   const preRelIds = pVersion ? pVersion.split('-')[1] : undefined; // e.x. 'prealpha.23'
   const bSplit = preRelIds ? preRelIds.split('.') : undefined; // e.x. ['prealpha', '23']
   let preRelType = bSplit && bSplit[0] ? String(bSplit[0]) : undefined; // e.x. 'prealpha'
-  let preRelNumb = bSplit && bSplit[1] ? Number(bSplit[1]) : undefined; // e.x. '23'
+  let preRelNumb = bSplit && bSplit[1] ? String(bSplit[1]) : undefined; // e.x. '23'
 
   // Convert pType to lower case.
-  const type = pType.toLowerCase();
+  const type = pType.replace('-', '').toLowerCase();
 
   // If pType equals a case...
   switch (type) {
@@ -109,13 +109,9 @@ exports.incVersion = (pVersion, pType) => {
       break;
 
     case 'premajor':
-    case 'pre-major':
     case 'preminor':
-    case 'pre-minor':
     case 'prepatch':
-    case 'pre-patch':
     case 'prerelease':
-    case 'pre-release':
       major = 1; // Reset major to one.
 
       minor = 0; // Reset minor to zero.
@@ -124,11 +120,15 @@ exports.incVersion = (pVersion, pType) => {
 
       // Define preRelType, if it's not set.
       if (!preRelType) {
-        preRelType = type.replace('-', '');
+        preRelType = type;
       }
 
+      // If we're incrementing a preRelType and preRelNumb isn't a number, make equal 0.
+      if (preRelNumb && isNaN(preRelNumb)) {
+        preRelNumb = 1;
+
       // Increment preRelNumb if it's set, it must either not exist; or, be larger than one.
-      if (preRelNumb) {
+      } else if (preRelNumb) {
         preRelNumb++; // Increment preRelNumb by one.
       }
 
@@ -149,5 +149,3 @@ exports.incVersion = (pVersion, pType) => {
 
   return newVersion;
 };
-
-exports.incVersion('2.2.1', 'minor');
