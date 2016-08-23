@@ -50,4 +50,8 @@ describe('Utility Tool', () => {
 
     done();
   });
+
+  it('should bump the version', (done) => {
+    done();
+  });
 });
