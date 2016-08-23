@@ -141,5 +141,7 @@ exports.warn = (msg, obj, level) => {
  * @return {Element} element
  */
 exports.bumpit = (version, tag) => {
+  const semver = require('semver');
+
   console.log('bumped test', version, tag);
 };
