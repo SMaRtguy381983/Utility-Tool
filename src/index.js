@@ -61,6 +61,8 @@ exports.debug = (msg, obj, level) => {
  * @param {Variable} level
  * @return {String} message
  */
+exports.log = (msg, obj, level) => {
+};
 
  /**
   * error() will output to console.error()
@@ -70,6 +72,9 @@ exports.debug = (msg, obj, level) => {
   * @param {Variable} level
   * @return {String} message
   */
+  exports.error = (msg, obj, level) => {
+  };
+
 
   /**
    * warn() will output to console.warn()
@@ -79,3 +84,5 @@ exports.debug = (msg, obj, level) => {
    * @param {Variable} level
    * @return {String} message
    */
+   exports.warn = (msg, obj, level) => {
+   };
