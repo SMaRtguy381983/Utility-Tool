@@ -61,3 +61,21 @@ exports.debug = (msg, obj, level) => {
  * @param {Variable} level
  * @return {String} message
  */
+
+ /**
+  * error() will output to console.error()
+  *
+  * @param {String} msg
+  * @param {Object} obj
+  * @param {Variable} level
+  * @return {String} message
+  */
+
+  /**
+   * warn() will output to console.warn()
+   *
+   * @param {String} msg
+   * @param {Object} obj
+   * @param {Variable} level
+   * @return {String} message
+   */
