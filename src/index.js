@@ -1,8 +1,3 @@
-// random test
-
-// Get the file system for writing to file
-const fs = require('fs');
-
 const chalk = require('chalk');
 
 const success = chalk.bold.green;
@@ -34,22 +29,6 @@ exports.debug = (msg, obj, level) => {
 
     // Print to console
     console.log(`${text}\n`);
-
-    // Print (append) to file
-    text = `<li style="background:purple;color:skyblue;font-style:italic">
-    <p>${timestamp}</p>
-      <p>${msg}</p>
-      <p>${JSON.stringify(obj, null, 4)}</p>
-</li>
-<hr style=background:yellow>`;
-
-    // Print text out to the debug file
-    fs.appendFile('logs/debug.log', text, (err) => {
-      // Display error in console if it is not null
-      if (err) {
-        console.log(err);
-      }
-    });
   }
 };
 
