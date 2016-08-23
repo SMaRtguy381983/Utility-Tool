@@ -140,3 +140,6 @@ exports.warn = (msg, obj, level) => {
  * @param {String} tag: 'major', 'minor', 'patch' keywords
  * @return {Element} element
  */
+exports.bumpit = (version, tag) => {
+  console.log('bumped test', version, tag);
+};
