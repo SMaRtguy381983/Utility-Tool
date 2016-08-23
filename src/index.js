@@ -33,8 +33,7 @@ exports.debug = (msg, obj, level) => {
 };
 
 /**
-* log() will output to console.log()
-*
+* @function log() will output to console.log()
 * @param {String} msg
 * @param {Object} obj
 * @param {Variable} level
@@ -68,8 +67,7 @@ exports.log = (msg, obj, level) => {
 };
 
 /**
-* error() will output to console.error()
-*
+* @function error() will output to console.error()
 * @param {String} msg
 * @param {Object} obj
 * @param {Variable} level
@@ -102,10 +100,9 @@ exports.error = (msg, obj, level) => {
   }
 };
 
-/**
-  * warn() will output to console.warn()
-  *
-  * @param {String} msg
+ /**
+ * @function warn() will output to console.warn()
+ * @param {String} msg
  * @param {Object} obj
  * @param {Variable} level
  * @return {String} message
@@ -136,3 +133,10 @@ exports.warn = (msg, obj, level) => {
     console.log(`${text}\n`);
   }
 };
+
+/**
+ * @function VERSION BUMP
+ * @param {String} version: current version number
+ * @param {String} tag: 'major', 'minor', 'patch' keywords
+ * @return {Element} element
+ */
