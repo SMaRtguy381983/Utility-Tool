@@ -1,8 +1,13 @@
+<body style='background:grey'>
+
+[![Utility-Tool](https://codeship.com/projects/62aa95a0-4a35-0134-4f3f-7683f1944f86/status?branch=master)](https://codeship.com/projects/169620)
+
 <h1 style='color:purple; font-weight:bolder'>loot-ytilitu - a Utility Tool: The README</h1>
 <ul style='font-size:1.3em'>What's is loot-ytilitu?
   <li style='font-size:.8em'>loot-ytilitu is in short a Utility Tool that displays all the requested information in console as well as store it in log.
   <li style='font-size:.8em'>By default, it is setup to display all successful operations in <p style='font-size:1.5em;color:green'>GREEN</li>
-  <li style='font-size:.8em'>By default, it is setup to display all erroneous operations in <p style='font-size:1.5em;color:red'>RED</li>
+  <li style='font-size:.8em'>By default, it is setup to display all potential harmful operations in <p style='font-size:1.5em;color:yellow'>YELLOW</li>
+    <li style='font-size:.8em'>By default, it is setup to display all erroneous operations in <p style='font-size:1.5em;color:red'>RED</li>
 </ul>
 
 <hr>
@@ -19,14 +24,6 @@
 ```
 npm i loot-ytilitu --save-dev
 ```
-
-  <p> In your project root folder, create a folder called logs. This can be done in many ways, here is how to do it using Terminal.</p>
-
-  <p>In Terminal type:</p>
-
-  ```
-  mkdir logs
-  ```
 
   <p>At the top of the folders that contain scripts you are running be sure to include this line at the top</p>
 
@@ -45,12 +42,24 @@ npm i loot-ytilitu --save-dev
 ```
 DEBUG=true node src/server.js
 ```
-<p>With this line in src/server.js</p>
+<p>With these lines in src/server.js</p>
 
-```
+```javascript
  utilityTool.debug(`Server Active on ${port}`);
- ```
-<p>How it shows in console:</p>
+```
+
+```javascript
+utilityTool.log(`Server Active on ${port}`);
+```
+
+```javascript
+utilityTool.warn(`Server Active on ${port}`);
+```
+
+```javascript
+utilityTool.error(`Server Active on ${port}`);
+```
+<p>Different colors shows in console:</p>
 
 ```
 Thu Aug 18 2016 21:55:48 GMT-0400 (EDT)
