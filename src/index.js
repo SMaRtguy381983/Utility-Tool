@@ -52,3 +52,12 @@ exports.debug = (msg, obj, level) => {
     });
   }
 };
+
+/**
+ * log() will output to console.log()
+ *
+ * @param {String} msg
+ * @param {Object} obj
+ * @param {Variable} level
+ * @return {String} message
+ */
