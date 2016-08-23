@@ -125,11 +125,11 @@ exports.warn = (msg, obj, level) => {
       text += JSON.stringify(obj, null, 4);
     }
 
-      // Color text depending on level
+    // Color text depending on level
     if (level === 0) {
-      text = error(text);
+      text = warn(text);
     } else if (level === 1) {
-      text = success(text);
+      text = warn(text);
     }
 
     // Print to console
