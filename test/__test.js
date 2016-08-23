@@ -3,6 +3,7 @@ const sinon = require('sinon');
 
 let app;
 
+// FIXME: mocha test failling
 describe('Utility Tool', () => {
   beforeEach(() => {
     app = require('../src/index');
