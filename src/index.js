@@ -142,16 +142,17 @@ exports.warn = (msg, obj, level) => {
  */
 exports.bumpit = (currentV, tag) => {
   const semver = require('semver');
-  const fs = require('fs');
-  // current working directory
-  const cwd = process.cwd();
-
-  // test log statement
-  console.log('bumped test', currentV, tag);
 
   // Major bump
   if (tag === 'major') {
     const bumpMajor = semver.inc(currentV, tag);
+    return bumpMajor;
+  } else if (tag === 'minor') {
+    const bumpMinor = semver.inc(currentV, tag);
+    return bumpMinor;
+  } else if (tag === 'patch') {
+    const bumpPatch = semver.inc(currentV, tag);
+    return bumpPatch;
   }
   return new Error();
 };
