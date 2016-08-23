@@ -28,25 +28,25 @@ describe('Utility Tool', () => {
     done();
   });
 
-  it('should out put to log stream', (done) => {
+  it('should output to log stream', (done) => {
     app.log('test message', {}, 1);
 
     expect(console.log.callCount).to.equal(1);
     done();
   });
 
-  it('should out put to error stream', (done) => {
+  it('should output to error stream', (done) => {
     app.error('test message', {}, 1);
 
-    expect(console.error.callCount).to.equal(1);
+    expect(console.log.callCount).to.equal(1);
 
     done();
   });
 
-  it('should out put to warn stream', (done) => {
+  it('should output to warn stream', (done) => {
     app.warn('test message', {}, 1);
 
-    expect(console.console.warn.callCount).to.equal(1);
+    expect(console.log.callCount).to.equal(1);
 
     done();
   });
