@@ -24,14 +24,19 @@ describe('Utility Tool', () => {
   });
 
   it('should out put to log stream', (done) => {
+    expect(console.log.callCount).to.equal(1);
     done();
   });
 
   it('should out put to error stream', (done) => {
+    expect(console.error.callCount).to.equal(1);
+
     done();
   });
 
   it('should out put to warn stream', (done) => {
+    expect(console.console.warn.callCount).to.equal(1);
+
     done();
   });
 });
