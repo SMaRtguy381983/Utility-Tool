@@ -1,3 +1,7 @@
+<body style='background:grey'>
+
+https://codeship.com/projects/62aa95a0-4a35-0134-4f3f-7683f1944f86/status?branch=master
+
 <h1 style='color:purple; font-weight:bolder'>loot-ytilitu - a Utility Tool: The README</h1>
 <ul style='font-size:1.3em'>What's is loot-ytilitu?
   <li style='font-size:.8em'>loot-ytilitu is in short a Utility Tool that displays all the requested information in console as well as store it in log.
