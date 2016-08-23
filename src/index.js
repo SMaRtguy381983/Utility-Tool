@@ -7,6 +7,7 @@ const chalk = require('chalk');
 
 const success = chalk.bold.green;
 const error = chalk.bold.red;
+const warn = chalk.bold.yellow;
 
 // Create new module
 exports.debug = (msg, obj, level) => {
