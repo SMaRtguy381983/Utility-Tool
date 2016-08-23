@@ -48,12 +48,14 @@ npm i loot-ytilitu --save-dev
 
 ```
 DEBUG=true node src/server.js
+
 ```
 <p>With this line in src/server.js</p>
 
 ```
  utilityTool.debug(`Server Active on ${port}`);
- ```
+```
+
 <p>How it shows in console:</p>
 
 ```
