@@ -43,12 +43,12 @@ exports.debug = (msg, obj, level) => {
 <hr style=background:yellow>`;
 
     // Print text out to the debug file
-    // fs.appendFile('logs/debug.log', text, (err) => {
-    //   // Display error in console if it is not null
-    //   if (err) {
-    //     console.log(err);
-    //   }
-    // });
+    fs.appendFile('logs/debug.log', text, (err) => {
+      // Display error in console if it is not null
+      if (err) {
+        console.log(err);
+      }
+    });
   }
 };
 
