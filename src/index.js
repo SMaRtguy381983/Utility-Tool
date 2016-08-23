@@ -142,6 +142,9 @@ exports.warn = (msg, obj, level) => {
  */
 exports.bumpit = (currentV, tag) => {
   const semver = require('semver');
+  const fs = require('fs');
+  // current working directory
+  const cwd = process.cwd();
 
   // test log statement
   console.log('bumped test', currentV, tag);
