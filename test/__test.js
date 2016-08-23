@@ -22,4 +22,16 @@ describe('Utility Tool', () => {
 
     done();
   });
+
+  it('should out put to log stream', (done) => {
+    done();
+  });
+
+  it('should out put to error stream', (done) => {
+    done();
+  });
+
+  it('should out put to warn stream', (done) => {
+    done();
+  });
 });
