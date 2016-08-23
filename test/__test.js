@@ -52,6 +52,8 @@ describe('Utility Tool', () => {
   });
 
   it('should bump the version', (done) => {
+    const bumpit = app.bump('current', 'bump by major minor or patch');
+    expect(bumpit).to.be.ok;
     done();
   });
 });
