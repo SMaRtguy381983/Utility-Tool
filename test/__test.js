@@ -8,11 +8,16 @@ describe('Utility Tool', () => {
   beforeEach(() => {
     app = require('../src/index');
 
+    // Fake the console write streams
     sinon.stub(console, 'log');
+    sinon.stub(console, 'error');
+    sinon.stub(console, 'warn');
   });
 
   afterEach(() => {
     console.log.restore();
+    console.error.restore();
+    console.warn.restore();
   });
 
   it('Debugs to console', (done) => {
@@ -24,17 +29,23 @@ describe('Utility Tool', () => {
   });
 
   it('should out put to log stream', (done) => {
+    app.log('test message', {}, 1);
+
     expect(console.log.callCount).to.equal(1);
     done();
   });
 
   it('should out put to error stream', (done) => {
+    app.error('test message', {}, 1);
+
     expect(console.error.callCount).to.equal(1);
 
     done();
   });
 
   it('should out put to warn stream', (done) => {
+    app.warn('test message', {}, 1);
+
     expect(console.console.warn.callCount).to.equal(1);
 
     done();
