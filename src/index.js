@@ -140,8 +140,15 @@ exports.warn = (msg, obj, level) => {
  * @param {String} tag: 'major', 'minor', 'patch' keywords
  * @return {Element} element
  */
-exports.bumpit = (version, tag) => {
+exports.bumpit = (currentV, tag) => {
   const semver = require('semver');
 
-  console.log('bumped test', version, tag);
+  // test log statement
+  console.log('bumped test', currentV, tag);
+
+  // Major bump
+  if (tag === 'major') {
+    const bumpMajor = semver.inc(currentV, tag);
+  }
+  return new Error();
 };
