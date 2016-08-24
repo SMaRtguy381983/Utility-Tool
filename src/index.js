@@ -141,4 +141,14 @@ exports.warn = (msg, obj, level) => {
  * @return {Element} element
  */
 exports.bumpit = (currentV, tag) => {
+  const tagComp = tag.toUpperCase();
+  // Check tag string
+  if (tagComp === 'MAJOR') {
+    return 1;
+  } else if (tagComp === 'MINOR') {
+    return 1;
+  } else if (tagComp === 'PATCH') {
+    return 1;
+  }
+  return 1;
 };
