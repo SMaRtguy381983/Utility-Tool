@@ -151,7 +151,7 @@ exports.bumpit = (currentV, tag) => {
     return updateV;
   } else if (tagComp === 'MINOR') {
     // v0.+MINOR.0
-    updateV = 1;
+    updateV = 'MINOR';
     return updateV;
   } else if (tagComp === 'PATCH') {
     // v0.0.+PATCH

@@ -1,5 +1,6 @@
 const expect = require('chai').expect;
 const sinon = require('sinon');
+const bump = require('../src/index');
 
 let app;
 
@@ -50,10 +51,13 @@ describe('Utility Tool', () => {
 
     done();
   });
+});
 
-  it('should bump the version', (done) => {
-    const bumpit = app.bumpit('current', 'bump by major minor or patch');
-    expect(bumpit).to.be.ok;
+// Unit test for version bumping
+describe('version bump test', () => {
+  it('should test the version bumper', (done) => {
+    const bumpit = bump.bumpit('v', 'MAJOR');
+    console.log(bumpit);
     done();
   });
 });
