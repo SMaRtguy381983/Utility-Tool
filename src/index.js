@@ -142,13 +142,18 @@ exports.warn = (msg, obj, level) => {
  */
 exports.bumpit = (currentV, tag) => {
   const tagComp = tag.toUpperCase();
-  // Check tag string
+  let updateV = currentV;
+
+  // Check tag strings for semver versioning Vmajor.minor.patch
   if (tagComp === 'MAJOR') {
-    return 1;
+    updateV = 1;
+    return updateV;
   } else if (tagComp === 'MINOR') {
-    return 1;
+    updateV = 1;
+    return updateV;
   } else if (tagComp === 'PATCH') {
-    return 1;
+    updateV = 1;
+    return updateV;
   }
-  return 1;
+  return currentV;
 };
