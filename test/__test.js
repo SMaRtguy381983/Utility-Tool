@@ -55,8 +55,20 @@ describe('Utility Tool', () => {
 
 // Unit test for version bumping
 describe('version bump test', () => {
-  it('should test the version bumper', (done) => {
+  it('should test the MAJOR bump', (done) => {
     const bumpit = bump.bumpit('v', 'MAJOR');
+    console.log(bumpit);
+    done();
+  });
+
+  it('should test the MINOR bump', (done) => {
+    const bumpit = bump.bumpit('v', 'MINOR');
+    console.log(bumpit);
+    done();
+  });
+
+  it('should test the PATCH bump', (done) => {
+    const bumpit = bump.bumpit('v', 'PATCH');
     console.log(bumpit);
     done();
   });
