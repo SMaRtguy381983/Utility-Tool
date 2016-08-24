@@ -147,15 +147,15 @@ exports.bumpit = (currentV, tag) => {
   // Check tag strings for semver versioning Vmajor.minor.patch
   if (tagComp === 'MAJOR') {
     // v+MAJOR.0.0
-    updateV = 1;
+    updateV = '1.0.0';
     return updateV;
   } else if (tagComp === 'MINOR') {
     // v0.+MINOR.0
-    updateV = 'MINOR';
+    updateV = 'val';
     return updateV;
   } else if (tagComp === 'PATCH') {
     // v0.0.+PATCH
-    updateV = 1;
+    updateV = 'val';
     return updateV;
   }
   return currentV;

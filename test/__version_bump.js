@@ -4,13 +4,15 @@ const expect = require('chai').expect;
 // Unit test for version bumping
 describe('VERSION BUMP TEST: ', () => {
   it('should test the MAJOR bump', (done) => {
-    const currentV = '0.0.0';
+    const obj = { val: 1 };
+    const fn = () => { obj.val = 2; };
+    const currentV = '1.0.0';
     const tag = 'major';
     const bumpit = bump.bumpit(currentV, tag);
 
-    // expect(fn).to.increase(obj, 'val');
 
     console.log(bumpit);
+    expect(fn).to.increase(obj, 'val');
     done();
   });
 
