@@ -60,6 +60,8 @@ describe('version bump test', () => {
     const tag = 'major';
     const bumpit = bump.bumpit(currentV, tag);
 
+    // expect(fn).to.increase(obj, 'val');
+
     console.log(bumpit);
     done();
   });
