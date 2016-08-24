@@ -52,35 +52,3 @@ describe('Utility Tool', () => {
     done();
   });
 });
-
-// Unit test for version bumping
-describe('version bump test', () => {
-  it('should test the MAJOR bump', (done) => {
-    const currentV = '0.0.0';
-    const tag = 'major';
-    const bumpit = bump.bumpit(currentV, tag);
-
-    // expect(fn).to.increase(obj, 'val');
-
-    console.log(bumpit);
-    done();
-  });
-
-  it('should test the MINOR bump', (done) => {
-    const currentV = '0.0.0';
-    const tag = 'major';
-    const bumpit = bump.bumpit(currentV, tag);
-
-    console.log(bumpit);
-    done();
-  });
-
-  it('should test the PATCH bump', (done) => {
-    const currentV = '0.0.0';
-    const tag = 'major';
-    const bumpit = bump.bumpit(currentV, tag);
-
-    console.log(bumpit);
-    done();
-  });
-});
