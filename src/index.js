@@ -1,8 +1,3 @@
-// random test
-
-// Get the file system for writing to file
-const fs = require('fs');
-
 const chalk = require('chalk');
 
 const success = chalk.bold.green;
@@ -27,10 +22,10 @@ exports.debug = (msg, obj, level) => {
     // Color text depending on level
     if (level === 0) {
       // Print to console
-      text = console.error(`${text}\n`);
+      text = console.error(error(`${text}\n`));
     } else if (level === 1) {
       // Print to console
-      text = console.log(`${text}\n`);
+      text = console.log(success(`${text}\n`));
     }
   }
 };
