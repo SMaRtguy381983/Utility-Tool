@@ -1,6 +1,5 @@
 const expect = require('chai').expect;
 const sinon = require('sinon');
-const bump = require('../src/index');
 
 let app;
 

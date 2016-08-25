@@ -142,21 +142,25 @@ exports.warn = (msg, obj, level) => {
  */
 exports.bumpit = (currentV, tag) => {
   const tagComp = tag.toUpperCase();
-  let updateV = currentV;
-
-  // Check tag strings for semver versioning Vmajor.minor.patch
-  if (tagComp === 'MAJOR') {
-    // v+MAJOR.0.0
-    updateV = '11';
-    return updateV;
-  } else if (tagComp === 'MINOR') {
-    // v0.+MINOR.0
-    updateV = 'val';
-    return updateV;
-  } else if (tagComp === 'PATCH') {
-    // v0.0.+PATCH
-    updateV = 'val';
-    return updateV;
+  // Make sure input version is correct style
+  if (currentV.match(/^[a-z]+$/)) {
+    return 'error';
+  } else {
+    // Save correct input version into new variable
+    let updateV = currentV;
+    // Check tag strings for semver versioning Vmajor.minor.patch
+    if (tagComp === 'MAJOR') {
+      // v+MAJOR.0.0
+      updateV = '11';
+      return updateV;
+    } else if (tagComp === 'MINOR') {
+      // v0.+MINOR.0
+      updateV = 'val';
+      return updateV;
+    } else if (tagComp === 'PATCH') {
+      // v0.0.+PATCH
+      updateV = 'val';
+      return updateV;
+    }
   }
-  return currentV;
 };

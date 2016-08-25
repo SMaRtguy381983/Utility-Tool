@@ -5,7 +5,7 @@ const expect = require('chai').expect;
 describe('VERSION BUMP TEST: ', () => {
   it('should test the MAJOR bump', (done) => {
     const tag = 'major';
-    const currentV = '1.0.0';
+    const currentV = 'k';
     const bumpit = bump.bumpit(currentV, tag);
 
     console.log(bumpit);
