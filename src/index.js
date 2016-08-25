@@ -22,10 +22,10 @@ exports.debug = (msg, obj, level) => {
     // Color text depending on level
     if (level === 0) {
       // Print to console
-      text = console.error(error(`${text}\n`));
+      console.error(error(`${text}\n`));
     } else if (level === 1) {
       // Print to console
-      text = console.log(success(`${text}\n`));
+      console.log(success(`${text}\n`));
     }
   }
 };
