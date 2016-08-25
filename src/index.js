@@ -147,7 +147,7 @@ exports.bumpit = (currentV, tag) => {
   // Check tag strings for semver versioning Vmajor.minor.patch
   if (tagComp === 'MAJOR') {
     // v+MAJOR.0.0
-    updateV = '1.0.0';
+    updateV = '11';
     return updateV;
   } else if (tagComp === 'MINOR') {
     // v0.+MINOR.0
