@@ -14,7 +14,7 @@
 		"new-cap": 0,
 		"prefer-template": 0,
 		"global-require": 0,
-		"no-console": ["error", { "allow": ["log"] }]
+		"no-console": ["error", { "allow": ["error", "log", "warn"] }]
 	},
 	"globals": {
 		"describe": true,
