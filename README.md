@@ -66,7 +66,20 @@ Thu Aug 18 2016 21:55:48 GMT-0400 (EDT)
 Server Active on 3000
 ```
 
-  <hr>
+##VERSION BUMPING
+this tool will also allow a developer to update their current project's version incrementally via a task manager.
+
+###bumpit(currentV, tag)
+takes in two parameters where 'currentV' is the current projects version, and 'tag' is either of 3 strings: MAJOR, MINOR, PATCH. Returns a String.
+
+```javascript
+utilityTool.bumpit('1.1.1', 'MAJOR');
+```
+example output
+```
+2.0.0
+```
+   <hr>
 
   <section style='background:red'>
     <h2>Semantic Versioning</h2>
