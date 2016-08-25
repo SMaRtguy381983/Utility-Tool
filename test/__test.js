@@ -1,6 +1,6 @@
 const expect = require('chai').expect;
 const sinon = require('sinon');
-const index = require('../src/index');
+const utilityTool = require('../src/index');
 
 let app;
 
@@ -24,28 +24,54 @@ describe('Utility Tool', () => {
   });
 });
 
-describe('TimeTo_Go Version Number Increaser Test: ', () => {
-  it('Should Return a String', (done) => {
-    const incVersion = index.incVersion('1.0.0', 'patch');
+describe('Utility-Tool-1: Version Number Increaser Unit Test(s): ', () => {
+  const tests = [{
+    expect: '1.0.0-prepatch',
+    type: 'prepatch',
+    version: '3.2.1',
+  }, {
+    expect: '1.0.0-prepatch',
+    type: 'prepatch',
+    version: '1.0.0',
+  }, {
+    expect: '1.0.0-prepatch.1',
+    type: 'prepatch',
+    version: '1.0.0-prepatch',
+  }, {
+    expect: '1.0.0-prepatch.2',
+    type: 'prepatch',
+    version: '1.0.0-prepatch.1',
+  }, {
+    expect: '1.0.0-preminor',
+    type: 'preminor',
+    version: '1.0.0',
+  }, {
+    expect: '1.0.0-premajor',
+    type: 'premajor',
+    version: '1.0.0',
+  }, {
+    expect: '1.0.0-prerelease',
+    type: 'prerelease',
+    version: '1.0.0',
+  }, {
+    expect: '2.1.4',
+    type: 'patch',
+    version: '2.1.3',
+  }, {
+    expect: '2.2.0',
+    type: 'minor',
+    version: '2.1.4',
+  }, {
+    expect: '3.0.0',
+    type: 'major',
+    version: '2.2.0',
+  }];
 
-    if (incVersion && incVersion === String(incVersion)) {
+  tests.forEach(test => {
+    it(`${test.type} on ${test.version} should return ${test.expect}`, (done) => {
+      expect(utilityTool.incVersion(test.version, test.type)).to.equal(test.expect);
+
       done();
-    }
-  });
-
-  it('Should Return False', (done) => {
-    const incVersion = index.incVersion(1.2, 'minor');
-
-    if (!incVersion) {
-      done();
-    }
-  });
-
-  it('Should Return False', (done) => {
-    const incVersion = index.incVersion('1.0.0', 'pink');
-
-    if (!incVersion) {
-      done();
-    }
+    });
   });
 });

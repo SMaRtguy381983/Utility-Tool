@@ -68,19 +68,24 @@ exports.incVersion = (pVersion, pType) => {
     return false;
   }
 
-  // Store the split values of pVersion.
-  // e.x. 2.5.3
-  const ids = pVersion ? pVersion.split('-')[0] : undefined; // e.x. '2.5.3'
-  const aSplit = ids ? ids.split('.') : undefined; // e.x. ['2', '5', '3']
-  let major = aSplit && aSplit[0] ? Number(aSplit[0]) : 1; // e.x. '2'
-  let minor = aSplit && aSplit[1] ? Number(aSplit[1]) : 0; // e.x. '5'
-  let patch = aSplit && aSplit[2] ? Number(aSplit[2]) : 0; // e.x. '3'
+  // pVersion e.x. 1.0.0-prealpha.23
 
-  // e.x. 1.0.0-prealpha.23
+  // Store the first split value of pVersion.
+  const ids = pVersion ? pVersion.split('-')[0] : undefined; // e.x. '1.0.0'
+
+  // Store the further split values of each split value of pVersion.
+  const aSplit = ids ? ids.split('.') : undefined; // e.x. ['1', '0', '0']
+  let major = aSplit && aSplit[0] ? Number(aSplit[0]) : 1; // e.x. 1
+  let minor = aSplit && aSplit[1] ? Number(aSplit[1]) : 0; // e.x. 0
+  let patch = aSplit && aSplit[2] ? Number(aSplit[2]) : 0; // e.x. 0
+
+  // Store the second split value of pVersion.
   const preRelIds = pVersion ? pVersion.split('-')[1] : undefined; // e.x. 'prealpha.23'
+
+  // Store the further split values of each split value of pVersion.
   const bSplit = preRelIds ? preRelIds.split('.') : undefined; // e.x. ['prealpha', '23']
   let preRelType = bSplit && bSplit[0] ? String(bSplit[0]) : undefined; // e.x. 'prealpha'
-  let preRelNumb = bSplit && bSplit[1] ? String(bSplit[1]) : undefined; // e.x. '23'
+  let preRelNumb = bSplit && bSplit[1] ? Number(bSplit[1]) : undefined; // e.x. 23
 
   // Convert pType to lower case.
   const type = pType.replace('-', '').toLowerCase();
@@ -119,18 +124,24 @@ exports.incVersion = (pVersion, pType) => {
       patch = 0; // Reset patch to zero.
 
       // Define preRelType, if it's not set.
+      // This happens if pVersion has never been pre-versioned.
       if (!preRelType) {
         preRelType = type;
+
+        preRelNumb = undefined;
+
+        break;
       }
 
-      // If we're incrementing a preRelType and preRelNumb isn't a number, make equal 0.
-      if (preRelNumb && isNaN(preRelNumb)) {
-        preRelNumb = 1;
+      // If preRelNumb is a number increment preRelNumb by one.
+      if (preRelNumb && preRelNumb === Number(preRelNumb)) {
+        preRelNumb++;
 
-      // Increment preRelNumb if it's set, it must either not exist; or, be larger than one.
-      } else if (preRelNumb) {
-        preRelNumb++; // Increment preRelNumb by one.
+        break;
       }
+
+      // Otherwise, make preRelNumb equal 1, for the second preRelNumb (the first has no number).
+      preRelNumb = 1;
 
       break;
 
