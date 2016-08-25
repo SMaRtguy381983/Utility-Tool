@@ -58,12 +58,12 @@ exports.incVersion = (pVersion, pType) => {
 
   // Ensure that pVersion and pType are of type String.
   if (pVersion !== String(pVersion)) {
-    exports.debug('pVersion is not valid', "e.x. '1.0.0-alpha' > '1.0.0-alpha.1' > " +
-    "'1.0.0-alpha.beta' > '1.0.0-beta' > '1.0.0' > '1.0.1' > '1.1.0' > '2.0.0'", 'error');
+    exports.debug("pVersion is not valid. e.x. '1.0.0-alpha' > '1.0.0-alpha.1' > " +
+    "'1.0.0-alpha.beta' > '1.0.0-beta' > '1.0.0' > '1.0.1' > '1.1.0' > '2.0.0'", {}, 0);
 
     return false;
   } else if (pType !== String(pType)) {
-    exports.debug('pType is not valid', errMsg, 'error');
+    exports.debug(`pType is not valid ${errMsg}`, {}, 0);
 
     return false;
   }
@@ -146,7 +146,7 @@ exports.incVersion = (pVersion, pType) => {
       break;
 
     default:
-      exports.debug('pType is not valid', errMsg, 'error');
+      exports.debug(`pType is not valid ${errMsg}`, {}, 0);
 
       return false;
   }
@@ -156,7 +156,7 @@ exports.incVersion = (pVersion, pType) => {
   `${preRelType ? `${preRelType}` : ''}${preRelType && preRelNumb ? '.' : ''}` +
   `${preRelNumb ? `${preRelNumb}` : ''}`;
 
-  exports.debug(`Incremented ${pType} of version!`, `Version is now: v${newVersion}`, 'log');
+  exports.debug(`Incremented ${pType} of version! Version is now: v${newVersion}`, {}, 1);
 
   return newVersion;
 };
