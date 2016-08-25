@@ -24,7 +24,7 @@ describe('Utility Tool', () => {
   });
 });
 
-describe('Utility-Tool-1: Version Number Increaser Unit Test(s): ', () => {
+describe('Utility-Tool: Version Number Increaser Unit Test(s): ', () => {
   const tests = [{
     expect: '1.0.0-prepatch',
     type: 'prepatch',
