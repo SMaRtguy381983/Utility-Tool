@@ -8,7 +8,7 @@ describe('VERSION BUMP TEST: ', () => {
     const currentV = '1.0.0';
     const bumpit = bump.bumpit(currentV, tag);
 
-    console.log(bumpit);
+    expect(bumpit).to.be.a('String');
     done();
   });
 
@@ -17,7 +17,7 @@ describe('VERSION BUMP TEST: ', () => {
     const tag = 'minor';
     const bumpit = bump.bumpit(currentV, tag);
 
-    console.log(bumpit);
+    expect(bumpit).to.be.a('String');
     done();
   });
 
@@ -26,7 +26,7 @@ describe('VERSION BUMP TEST: ', () => {
     const tag = 'patch';
     const bumpit = bump.bumpit(currentV, tag);
 
-    console.log(bumpit);
+    expect(bumpit).to.be.a('String');
     done();
   });
 });
