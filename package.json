@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "node src/index.js",
-    "test": "mocha --reporter spec test"
+    "test": "DEBUG=true mocha --reporter spec test"
   },
   "keywords": [
     "Assignment",
